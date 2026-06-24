@@ -8,7 +8,7 @@ jobs:
     steps:
       - run: whoami 
       - run: pwd
-      - run: ls
+      - run: ls /
       - run: date
       - run: uname -a
       - run: |
