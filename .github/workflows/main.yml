@@ -1,17 +1,16 @@
-name: base
+name: test
 
-on: [push]
-
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
 jobs:
-  comandos:
+  eventos:
     runs-on: ubuntu-latest
     steps:
-      - name: comandos linux
+      - name: Mostrar tipo de evento
         run: |
-         whoami 
-         pwd
-         ls /
-         date
-         uname -a
-         echo "este es un mensaje echo"
-         ls -la /home
+          echo "Este workflow se disparó por: ${{ github.event_name }}"
+        
