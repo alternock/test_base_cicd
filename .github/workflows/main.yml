@@ -3,8 +3,14 @@ name: base
 on: [push]
 
 jobs:
-  hola-mundo:
+  comandos:
     runs-on: ubuntu-latest
     steps:
-      - name: saludo desde github actions
-        run: echo "hola desde github actions"
+      - run: whoami 
+      - run: pwd
+      - run: ls
+      - run: date
+      - run: uname -a
+      - run: |
+          echo "este es un mensaje echo"
+          ls -la
