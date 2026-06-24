@@ -13,4 +13,4 @@ jobs:
       - run: uname -a
       - run: |
           echo "este es un mensaje echo"
-          ls -la
+          ls -la /home
