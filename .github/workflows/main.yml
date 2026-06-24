@@ -6,11 +6,12 @@ jobs:
   comandos:
     runs-on: ubuntu-latest
     steps:
-      - run: whoami 
-      - run: pwd
-      - run: ls /
-      - run: date
-      - run: uname -a
-      - run: |
-          echo "este es un mensaje echo"
-          ls -la /home
+      - name: comandos linux
+        run: |
+         whoami 
+         pwd
+         ls /
+         date
+         uname -a
+         echo "este es un mensaje echo"
+         ls -la /home
