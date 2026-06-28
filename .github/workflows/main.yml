@@ -1,15 +1,21 @@
-name: 02 - Comandos Linux
-on: [push]
+name: Condiciones
+
+on: [push, pull_request]
 
 jobs:
-  comandos:
+  ejemplo:
     runs-on: ubuntu-latest
     steps:
-      - name: comandos
-      - run: whoami
-      - run: pwd
-      - run: date
-      - run: uname -a
-      - run: |
-          echo "Varios comandos en un solo step"
-          ls -la
+      - name: detectar push con if
+        if: github.event_name == 'push'
+        run: echo "Ejecutando solo en push"
+
+      - name: detectar pull_request con if
+        if: github.event_name == 'pull_request'
+        run: echo "Ejecutando solo en PR"
+
+      - name: Otra forma
+        run: |
+          if [ "${{ github.event_name }}" == "push" ]; then
+            echo "Se detectó un push desde script bash"
+          fi
