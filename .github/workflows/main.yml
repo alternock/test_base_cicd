@@ -1,16 +1,14 @@
-name: test
+name: 02 - Comandos Linux
+on: [push]
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    
 jobs:
-  eventos:
+  comandos:
     runs-on: ubuntu-latest
     steps:
-      - name: Mostrar tipo de evento
-        run: |
-          echo "Este workflow se disparó por: ${{ github.event_name }}"
-        
+      - run: whoami
+      - run: pwd
+      - run: date
+      - run: uname -a
+      - run: |
+          echo "Varios comandos en un solo step"
+          ls -la
