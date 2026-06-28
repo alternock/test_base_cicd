@@ -5,6 +5,7 @@ jobs:
   comandos:
     runs-on: ubuntu-latest
     steps:
+      - name: comandos
       - run: whoami
       - run: pwd
       - run: date
